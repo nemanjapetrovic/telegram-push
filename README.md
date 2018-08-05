@@ -8,19 +8,12 @@ To install this package just run:
 
 ```npm install telegram-push```
 
-# About telegram-push
-
-Telegram-push is using chatId created when some of your users sent the first message to your telegram bot.
-This chatId represents created chat between some person and your telegram bot. To find this chatId you can go to the next url:
-
-https://api.telegram.org/bot{YOUR_BOT_TOKEN_HERE}/GetUpdates
-
-Example fake url:
-https://api.telegram.org/bot124124124:AFHFASajsa9dasjajksdaldasd/GetUpdates
-
-or you can find more instructions on Telegram official [site](https://core.telegram.org/bots)
-
 # Basic usage example
+
+telegram-push requires for you to set up two environment variables:
+
+- TELEGRAM_URL=https://api.telegram.org
+- TELEGRAM_BOT_TOKEN=insert_your_bot_token
 
 Here is an example of using telegram-push:
 
@@ -58,6 +51,17 @@ async function foo2()
     await telegramPush.sendAsync(chatId, 'some async send message foo 2');
 }
 ```
+# About telegram-push
+
+Telegram-push is using chatId created when some of your users sent the first message to your telegram bot.
+This chatId represents created chat between some person and your telegram bot. To find this chatId you can go to the next url:
+
+https://api.telegram.org/bot{YOUR_BOT_TOKEN_HERE}/GetUpdates
+
+Example fake url:
+https://api.telegram.org/bot124124124:AFHFASajsa9dasjajksdaldasd/GetUpdates
+
+or you can find more instructions on Telegram official [site](https://core.telegram.org/bots)
 
 # [Contribution](https://github.com/nemanjapetrovic/telegram-push/blob/master/CONTRIBUTING.md)
 

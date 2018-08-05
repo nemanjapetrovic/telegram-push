@@ -1,6 +1,6 @@
 {
   "name": "telegram-push",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Async push text notifications to your telegram bot users.",
   "main": "index.js",
   "scripts": {
