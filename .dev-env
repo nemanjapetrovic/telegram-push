@@ -1,0 +1,3 @@
+#Telegram api
+TELEGRAM_URL=https://api.telegram.org
+TELEGRAM_BOT_TOKEN=your_token

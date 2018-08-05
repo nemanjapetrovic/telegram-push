@@ -1,0 +1,37 @@
+{
+  "name": "telegram-push",
+  "version": "1.0.0",
+  "description": "Async push text notifications to your telegram bot users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 15000 test/*.test.js test/**/*.test.js"
+  },
+  "keywords": [
+    "async",
+    "telegram",
+    "bot",
+    "push",
+    "notification",
+    "message",
+    "text"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nemanjapetrovic/telegram-push.git"
+  },
+  "author": "Nemanja Petrovic <nemanjapetrovic1794@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nemanjapetrovic/telegram-push/issues",
+    "email": "nemanjapetrovic1794@gmail.com"
+  },
+  "homepage": "https://github.com/nemanjapetrovic/telegram-push#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
