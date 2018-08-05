@@ -8,6 +8,18 @@ To install this package just run:
 
 ```npm install telegram-push```
 
+# About telegram-push
+
+Telegram-push is using chatId created when some of your users sent the first message to your telegram bot.
+This chatId represents created chat between some person and your telegram bot. To find this chatId you can go to the next url:
+
+https://api.telegram.org/bot{YOUR_BOT_TOKEN_HERE}/GetUpdates
+
+Example fake url:
+https://api.telegram.org/bot124124124:AFHFASajsa9dasjajksdaldasd/GetUpdates
+
+or you can find more instructions on Telegram official [site](https://core.telegram.org/bots)
+
 # Basic usage example
 
 Here is an example of using telegram-push:
@@ -18,7 +30,7 @@ const telegramPush = require('telegram-push');
 function foo(){
     //...
     //...
-    telegramPush.sendAsync(CHAT_ID, 'some message foo');
+    telegramPush.sendAsync(chatId, 'some message foo');
 }
 ```
 
@@ -32,8 +44,8 @@ async function foo1(){
     //...
 
     // async sending of the messages
-    telegramPush.sendAsync(CHAT_ID, 'some async send message foo 1');
-    telegramPush.sendAsync(CHAT_ID, 'some async send message foo 2');
+    telegramPush.sendAsync(chatId, 'some async send message foo 1');
+    telegramPush.sendAsync(chatId, 'some async send message foo 2');
 }
 
 async function foo2()
@@ -42,8 +54,8 @@ async function foo2()
     //...
 
     // sending one message after the other
-    await telegramPush.sendAsync(CHAT_ID, 'some async send message foo 1');
-    await telegramPush.sendAsync(CHAT_ID, 'some async send message foo 2');
+    await telegramPush.sendAsync(chatId, 'some async send message foo 1');
+    await telegramPush.sendAsync(chatId, 'some async send message foo 2');
 }
 ```
 
