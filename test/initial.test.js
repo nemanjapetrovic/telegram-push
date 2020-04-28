@@ -1,6 +1,8 @@
+/* eslint-env mocha */
+/* eslint-disable no-unused-expressions */
 const dotenv = require('dotenv');
 const assert = require('chai').assert;
-dotenv.load();
+dotenv.config();
 
 const telegramPush = require('./../index');
 
@@ -16,57 +18,33 @@ const telegramPush = require('./../index');
 const CHAT_ID = process.env.MY_CHAT_ID || '';
 
 describe('Send messages test', () => {
+  it('Validate chatId', () => {
+    assert.isNotEmpty(CHAT_ID);
+  });
 
-    it('Validate chatId', () => {
-        assert.isNotEmpty(CHAT_ID);
-    })
+  it('[Sync] send', async () => {
+    assert.isNotEmpty(CHAT_ID);
+    try {
+      await telegramPush.sendAsync(CHAT_ID, '[Sync] Message 1.1');
+      await telegramPush.sendAsync(CHAT_ID, '[Sync] Message 1.2');
+      await telegramPush.sendAsync(CHAT_ID, '[Sync] Message 1.3');
+      await telegramPush.sendAsync(CHAT_ID, '[Sync] Message 1.4');
+      await telegramPush.sendAsync(CHAT_ID, '[Sync] Message 1.5');
+    } catch (err) {
+      assert.fail(err);
+    }
+  });
 
-    it('Simple example', () => {
-        assert.isNotEmpty(CHAT_ID);
-
-        telegramPush.sendAsync(CHAT_ID, 'Simple Message 1').catch(err => {
-            assert.fail(err);
-        });
-    });
-
-    it('Sync send', async () => {
-        assert.isNotEmpty(CHAT_ID);
-
-        await telegramPush.sendAsync(CHAT_ID, 'Sync Message 1').catch(err => {
-            assert.fail(err);
-        });
-        await telegramPush.sendAsync(CHAT_ID, 'Sync Message 2').catch(err => {
-            assert.fail(err);
-        });
-        await telegramPush.sendAsync(CHAT_ID, 'Sync Message 3').catch(err => {
-            assert.fail(err);
-        });
-        await telegramPush.sendAsync(CHAT_ID, 'Sync Message 4').catch(err => {
-            assert.fail(err);
-        });
-        await telegramPush.sendAsync(CHAT_ID, 'Sync Message 5').catch(err => {
-            assert.fail(err);
-        });
-    });
-
-    it('Async send', async () => {
-        assert.isNotEmpty(CHAT_ID);
-
-        telegramPush.sendAsync(CHAT_ID, 'Async Message 1').catch(err => {
-            assert.fail(err);
-        });
-        telegramPush.sendAsync(CHAT_ID, 'Async Message 2').catch(err => {
-            assert.fail(err);
-        });
-        telegramPush.sendAsync(CHAT_ID, 'Async Message 3').catch(err => {
-            assert.fail(err);
-        });
-        telegramPush.sendAsync(CHAT_ID, 'Async Message 4').catch(err => {
-            assert.fail(err);
-        });
-        telegramPush.sendAsync(CHAT_ID, 'Async Message 5').catch(err => {
-            assert.fail(err);
-        });
-    });
-
+  it('[Async] send', async () => {
+    assert.isNotEmpty(CHAT_ID);
+    try {
+      telegramPush.sendAsync(CHAT_ID, '[Async] Message 1');
+      telegramPush.sendAsync(CHAT_ID, '[Async] Message 2');
+      telegramPush.sendAsync(CHAT_ID, '[Async] Message 3');
+      telegramPush.sendAsync(CHAT_ID, '[Async] Message 4');
+      telegramPush.sendAsync(CHAT_ID, '[Async] Message 5');
+    } catch (err) {
+      assert.fail(err);
+    }
+  });
 });
