@@ -1,6 +1,6 @@
 # telegram-push
 
-Is an npm package used to async send text push notifications to your Telegram bot users.
+Is npm package used to send text push notifications to your Telegram bot users.
 
 # Install
 
@@ -20,7 +20,7 @@ Here is an example of using telegram-push:
 ```
 const telegramPush = require('telegram-push');
 
-function foo(){
+function foo () {
     //...
     //...
     telegramPush.sendAsync(chatId, 'some message foo');
@@ -32,7 +32,7 @@ How to use telegram-push with async/await:
 ```
 const telegramPush = require('telegram-push');
 
-async function foo1(){
+async function foo1 () {
     //...
     //...
 
@@ -41,7 +41,7 @@ async function foo1(){
     telegramPush.sendAsync(chatId, 'some async send message foo 2');
 }
 
-async function foo2()
+async function foo2 ()
 {
     //...
     //...
@@ -53,8 +53,8 @@ async function foo2()
 ```
 # About telegram-push
 
-Telegram-push is using chatId created when some of your users sent the first message to your telegram bot.
-This chatId represents created chat between some person and your telegram bot. To find this chatId you can go to the next url:
+Telegram-push is using chatId created automatically by Telegram when some of your users sends the first message to your Telegram bot.
+This chatId represents created chat between some person and your Telegram bot. To find this chatId you can go to the next url:
 
 https://api.telegram.org/bot{YOUR_BOT_TOKEN_HERE}/GetUpdates
 
@@ -65,7 +65,7 @@ or you can find more instructions on Telegram official [site](https://core.teleg
 
 # [Contribution](https://github.com/nemanjapetrovic/telegram-push/blob/master/CONTRIBUTING.md)
 
-Feel free to contribute by forking this repository, making some changes, and submitting pull requests. For any questions or advice place an issue on this repository.
+Feel free to contribute by forking this repository, making changes, and submitting pull requests. For any questions or advice place an issue on this repository.
 
 # License
 
